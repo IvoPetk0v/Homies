@@ -39,5 +39,26 @@ namespace Homies.Controllers
             return View(model);
 
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var model = await eventService.GetEventById(id);
+             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id,EditEventViewModel model)
+        {
+            if (ModelState.IsValid == false) 
+            {
+                return View(model);
+            }
+
+            await eventService.EditEvent(id, model);
+            return RedirectToAction("All", "Event");
+
+
+        }
     }
 }

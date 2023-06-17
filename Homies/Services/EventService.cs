@@ -55,8 +55,47 @@ namespace Homies.Services
                 TypeId = model.TypeId
 
             };
-           await dbContext.Events.AddAsync(newEvent);
-           await dbContext.SaveChangesAsync();
+            await dbContext.Events.AddAsync(newEvent);
+            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task<EditEventViewModel> GetEventById(int id)
+        {
+            var types = await dbContext
+                .Types
+                .Select(t => new TypeViewModel()
+                {
+                    Id = t.Id,
+                    Name = t.Name,
+                }).ToArrayAsync();
+
+            return await dbContext.Events
+                .Where(e => e.Id == id)
+                .Select(e => new EditEventViewModel()
+                {
+                    Name = e.Name,
+                    Description = e.Description,
+                    Start = e.Start.ToString(),
+                    End = e.End.ToString(),
+                    TypeId = e.TypeId,
+                    Types = types
+                }).FirstAsync();
+        }
+
+        public async Task EditEvent(int id, EditEventViewModel model)
+        {
+            var e = await dbContext.Events.FindAsync(id);
+
+            if (e != null)
+            {
+                e.Name = model.Name;
+                e.Description = model.Description;
+                e.Start = DateTime.Parse(model.Start);
+                e.End = DateTime.Parse(model.End);
+                e.TypeId= model.TypeId;
+
+                await dbContext.SaveChangesAsync();
+            }
         }
     }
 }
