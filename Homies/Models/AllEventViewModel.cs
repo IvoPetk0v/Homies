@@ -14,21 +14,12 @@ namespace Homies.Models
 
         public string Name { get; set; } = null!;
 
-
-        public string OrganiserId { get; set; } = null!;
-
-
-        public IdentityUser Organiser { get; set; } = null!;
+        public string Organiser { get; set; } = null!;
 
 
         public DateTime Start { get; set; }
 
-        public int TypeId { get; set; }
+        public string Type { get; set; } = null!;
 
-        [Required]
-        [ForeignKey(nameof(TypeId))]
-        public Type Type { get; set; } = null!;
-
-        public ICollection<EventParticipant> EventsParticipants { get; set; } = null;
     }
 }
