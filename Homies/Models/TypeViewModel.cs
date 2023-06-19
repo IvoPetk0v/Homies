@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using static Homies.Common.ModelValidationConstants;
 
 namespace Homies.Models
 {
@@ -6,7 +7,8 @@ namespace Homies.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [StringLength(TypeNameMaxLength, MinimumLength = TypeNameMinLength,
+            ErrorMessage = "Type length must be between 5 and 15 characters.")]
         public string Name { get; set; } = null!;
     }
 }

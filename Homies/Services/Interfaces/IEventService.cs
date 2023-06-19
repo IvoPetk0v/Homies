@@ -10,5 +10,9 @@ namespace Homies.Services.Interfaces
 
         public Task<EditEventViewModel> GetEventById(int id);
         public Task EditEvent(int id, EditEventViewModel model);
+        public Task<ICollection<AllEventViewModel>> GetJoinedEvents(string userId);
+        public Task AddJoinEvent(string userId, int eventId);
+        public Task LeaveEvent(string userId, int eventId);
+        public Task<DetailsEventViewModel> GetDetailsEventViewModel(int id);
     }
 }
