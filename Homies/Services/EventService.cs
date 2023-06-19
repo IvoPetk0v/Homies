@@ -76,8 +76,8 @@ namespace Homies.Services
                 {
                     Name = e.Name,
                     Description = e.Description,
-                    Start = e.Start,
-                    End = e.End,
+                    Start =e.Start.ToString("dd/MM/yyyy H:mm"),
+                    End = e.End.ToString("dd/MM/yyyy H:mm"),
                     TypeId = e.TypeId,
                     Types = types
                 }).FirstAsync();
@@ -91,8 +91,8 @@ namespace Homies.Services
             {
                 eventForEdit.Name = model.Name;
                 eventForEdit.Description = model.Description;
-                eventForEdit.Start = model.Start;
-                eventForEdit.End = model.End;
+                eventForEdit.Start = DateTime.Parse(model.Start);
+                eventForEdit.End =DateTime.Parse( model.End);
                 eventForEdit.TypeId = model.TypeId;
 
                 await dbContext.SaveChangesAsync();

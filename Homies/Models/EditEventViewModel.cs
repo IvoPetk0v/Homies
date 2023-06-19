@@ -11,9 +11,9 @@ namespace Homies.Models
         [StringLength(EventDescriptionMaxLength, MinimumLength = EventDescriptionMinLength, ErrorMessage = "Text characters must be between 15 and 150")]
         public string Description { get; set; } = null!;
 
-        public DateTime Start { get; set; }
+        public string Start { get; set; } = null!;
 
-        public DateTime End { get; set; }
+        public string End { get; set; }=null!;
 
         [Range(0, int.MaxValue)]
         public int TypeId { get; set; }
