@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Homies.Data.Migrations
+namespace Homies.Migrations
 {
     [DbContext(typeof(HomiesDbContext))]
-    [Migration("20230618121058_newStart")]
-    partial class newStart
+    [Migration("20230624202832_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -348,7 +348,7 @@ namespace Homies.Data.Migrations
                     b.HasOne("Homies.Data.Models.Event", "Event")
                         .WithMany("EventsParticipants")
                         .HasForeignKey("EventId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Helper")

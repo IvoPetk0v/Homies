@@ -1,4 +1,5 @@
 ﻿using Homies.Data.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Type = Homies.Data.Models.Type;
@@ -19,7 +20,8 @@ namespace Homies.Data
         {
             modelBuilder.Entity<EventParticipant>()
                 .HasKey(pk => new { pk.HelperId, pk.EventId });
-            //modelBuilder.Entity<EventParticipant>().HasOne(e => e.Event).WithOne(p => p);
+       modelBuilder.Entity<EventParticipant>().HasOne<Event>(ep=>ep.Event).WithMany(ep=>ep.EventsParticipants).HasForeignKey(ep=>ep.EventId).OnDelete(DeleteBehavior.Restrict);
+      
 
             modelBuilder
                 .Entity<Type>()
