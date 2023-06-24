@@ -19,6 +19,7 @@ namespace Homies.Data
         {
             modelBuilder.Entity<EventParticipant>()
                 .HasKey(pk => new { pk.HelperId, pk.EventId });
+            //modelBuilder.Entity<EventParticipant>().HasOne(e => e.Event).WithOne(p => p);
 
             modelBuilder
                 .Entity<Type>()

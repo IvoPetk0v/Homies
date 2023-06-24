@@ -129,6 +129,7 @@ namespace Homies.Services
         {
             var model = await dbContext.Events.Where(e => e.Id == id).Select(e => new DetailsEventViewModel()
             {
+                Id = e.Id,
                 Name = e.Name,
                 Description = e.Description,
                 Start = e.Start.ToString("dd-MM-yyyy H:mm"),
