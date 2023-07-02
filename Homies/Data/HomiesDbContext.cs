@@ -1,7 +1,7 @@
-﻿using Homies.Data.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+
+using Homies.Data.Models;
 using Type = Homies.Data.Models.Type;
 
 namespace Homies.Data
