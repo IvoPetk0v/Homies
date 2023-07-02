@@ -1,9 +1,7 @@
-﻿using Homies.Data.Models;
-using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using Humanizer;
+﻿using System.ComponentModel.DataAnnotations;
+
 using static Homies.Common.ModelValidationConstants;
+
 namespace Homies.Models
 {
     public class AddEventViewModel

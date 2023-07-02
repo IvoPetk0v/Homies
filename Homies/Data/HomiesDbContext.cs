@@ -20,8 +20,13 @@ namespace Homies.Data
         {
             modelBuilder.Entity<EventParticipant>()
                 .HasKey(pk => new { pk.HelperId, pk.EventId });
-       modelBuilder.Entity<EventParticipant>().HasOne<Event>(ep=>ep.Event).WithMany(ep=>ep.EventsParticipants).HasForeignKey(ep=>ep.EventId).OnDelete(DeleteBehavior.Restrict);
-      
+
+            modelBuilder.Entity<EventParticipant>()
+                .HasOne<Event>(ep => ep.Event)
+                .WithMany(ep => ep.EventsParticipants)
+                .HasForeignKey(ep => ep.EventId)
+                .OnDelete(DeleteBehavior.Restrict);
+
 
             modelBuilder
                 .Entity<Type>()

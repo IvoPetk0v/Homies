@@ -1,10 +1,9 @@
-﻿using System.Runtime.InteropServices;
+﻿using Microsoft.EntityFrameworkCore;
+
 using Homies.Data;
 using Homies.Data.Models;
 using Homies.Models;
 using Homies.Services.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Homies.Services
 {

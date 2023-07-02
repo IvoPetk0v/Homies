@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+
 using static Homies.Common.ModelValidationConstants;
 
 namespace Homies.Data.Models

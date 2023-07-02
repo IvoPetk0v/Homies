@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 using Microsoft.AspNetCore.Identity;
+
 using static Homies.Common.ModelValidationConstants;
 namespace Homies.Data.Models
 {
@@ -42,9 +44,9 @@ namespace Homies.Data.Models
 
         [Required]
         [ForeignKey(nameof(TypeId))]
-        public Type Type { get; set; }=null!;
+        public Type Type { get; set; } = null!;
 
-        public ICollection<EventParticipant> EventsParticipants { get; set; } 
+        public ICollection<EventParticipant> EventsParticipants { get; set; }
 
 
         //⦁	Has Id – a unique integer, Primary Key

@@ -1,9 +1,4 @@
-﻿using Homies.Data.Models;
-using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using Type = Homies.Data.Models.Type;
-
+﻿
 namespace Homies.Models
 {
     public class AllEventViewModel

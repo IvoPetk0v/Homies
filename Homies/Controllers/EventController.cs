@@ -1,7 +1,7 @@
-﻿using Homies.Models;
-using Homies.Services;
+﻿using Microsoft.AspNetCore.Mvc;
+
+using Homies.Models;
 using Homies.Services.Interfaces;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Homies.Controllers
 {
